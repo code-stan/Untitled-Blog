@@ -1,0 +1,5 @@
+@use "../../scss/config/variable" as *;
+
+.posts{
+     @extend %post-container-parent;
+}

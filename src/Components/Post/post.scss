@@ -1,0 +1,51 @@
+@use "../../scss/config/variable" as *;
+
+.post-container{
+    @include flex(stretch, start);
+    max-width: 40rem;
+    flex-direction: column;
+}
+.post-image{
+    align-self: start;
+}
+.post-content{
+    margin-top: 2.5rem;
+}
+.post-name-date{
+    color: $Dark-Desc-Color;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.post-title{
+    @include flex(start, space-between);
+    gap: 3.3rem;
+    margin-block: 1rem;
+    transition: .4s cubic-bezier(0.77, 0, 0.175, 1);
+    
+    &:hover{
+        opacity: .5;
+    }
+    & img{
+        padding-top: .5rem;
+        width: 2rem; 
+    }
+}
+.mod-ff{
+    @extend %ff;
+}
+.post-description {
+    color: $Desc-Color;
+    font-weight: 500;
+}
+.post-tags{
+    @include flex(center, start);
+    gap: 1rem;
+    margin-top: 2rem;
+
+    & > *{
+        border: 2px solid $Desc-Color;
+        border-radius: 2rem;
+        font-weight: 500;
+        padding: .2rem .5rem;
+    }
+}

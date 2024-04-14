@@ -1,0 +1,59 @@
+@use "../../../scss/config/variable" as *;
+
+.navbar{
+    padding-top: 2rem;
+    @include flex(center, space-between);
+    
+    .logo{
+        font-weight: 600;
+    }
+    .menu-container{
+        display: none;
+    }
+}
+.landing-page{
+    padding-top: 7rem;
+    margin-block: clamp(2rem, 8vw, 5rem);
+    text-align: center;
+
+    &__header{
+        font-size: 4.5rem;
+    }
+    &__content p{
+        margin-block: 2.5rem;
+        color: $Desc-Color;
+    }
+}
+.e-field{
+    @include flex(center, center);
+    flex-direction: column;
+    gap: 1.5rem;
+
+    & > *{
+        width: 100%;
+    }
+    .e-input{
+        color: $Dark-Accent;
+        font-size: 1.6rem;
+        padding: 1rem;
+        border: 2px solid $Desc-Color;
+        border-radius: .8rem;
+        background-color: transparent;
+        &::placeholder{
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: $Desc-Color;
+        }
+    }
+    & button{
+        background-color: $Dark-Accent;
+        color: $Ext-Color;
+        padding-block: 1.5rem;
+        border-radius: 1rem;
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
+}
+.success-modal{
+    display: none;
+}

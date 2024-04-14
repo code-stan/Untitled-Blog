@@ -1,0 +1,11 @@
+@use "../../../scss/config/variable" as *;
+
+.main{
+    margin-top: 10rem;
+}
+.recent-post__header{
+    font-size: 2.5rem;
+}
+.recent-posts{
+    @extend %post-container-parent;
+}
