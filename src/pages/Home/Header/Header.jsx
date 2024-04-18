@@ -1,15 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import './header.scss';
 
 const Header = ()=> {
-  const [emailInput, setEmailInput] = useState("")
+  const [emailInput, setEmailInput] = useState("");
+  const [ showPrompt, setShowPrompt ] = useState(false)
   const handleEmailInput = (e)=>{
-    setEmailInput( e.target.value)
+    setEmailInput(e.target.value)
   }
   const afterClick = (e)=>{
-    e.preventDefault()
-    console.log(emailInput);
+    e.preventDefault();
+    setEmailInput("")
+    setShowPrompt(true)
   }
+  useEffect(()=>{
+    const showSubcribe = setTimeout(()=> setShowPrompt(false), 3000)
+
+    return()=>{
+      clearTimeout(showSubcribe)
+    }
+  }, [showPrompt])
   return (
     <header className="header">
       <section className="landing-page">
@@ -22,20 +31,15 @@ const Header = ()=> {
           {/* EMAIL FORM */}
           <form onSubmit={afterClick} className="sub-form">
             <section className="emailInput e-field">
-            <input type="email" name="email" className="subscriberEmail e-input" onChange={handleEmailInput}  placeholder="Enter your email" required />
-            <button type="submit">Subscribe</button>
+            <input type="email" name="email" className="subscriberEmail e-input" 
+            value={emailInput}
+            onChange={handleEmailInput}  placeholder="Enter your email" required />
+            <button type="submit">Subscribe<span style={{display: showPrompt ?"inline-block" : "none"}}>d 🎉</span></button>
             </section>
           </form>
 
         </div>
         </div>
-        <section className="success-modal" aria-hidden>
-          <h3 className="display-msg">
-            Thank you <span>{emailInput.email}</span> for subscribing
-          </h3>
-          <img src="./check.png" alt="" />
-          <button type="button">Yay 🎉!</button>
-        </section>
       </section>
     </header>
   )

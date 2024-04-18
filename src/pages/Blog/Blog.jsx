@@ -36,7 +36,7 @@ const Blog = () => {
   
   return (
     <section className="blog">
-      <h1>ALL BLOG POSTS</h1>
+      <h1>All Blog Posts</h1>
       <div className="posts">
         {
             blogs && blogs.map((blogItem)=> (

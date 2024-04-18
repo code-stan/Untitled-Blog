@@ -3,8 +3,7 @@
 
 
 .landing-page{
-    padding-top: 7rem;
-    margin-block: clamp(2rem, 8vw, 5rem);
+    margin-block: $hero-space-block;
     text-align: center;
 
     &__header{
@@ -64,7 +63,7 @@
         border: 2px solid $Desc-Color;
         border-radius: 1.5rem;
         padding: .5rem;
-        max-width: 50rem;
+        max-width: 55rem;
         
         & > *{
         }
@@ -75,7 +74,8 @@
         }
 
         button{
-            flex-basis: 35%;
+            padding-inline: 1.5rem;
+            flex-basis: 40%;
         }
     }
 }

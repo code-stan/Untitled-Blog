@@ -8,7 +8,7 @@ const Post = ({ author, title, publishedAt, url, alt, slug, categories}) => {
         (item !== null && <p key={item.title}>{item.title}</p>)
     ))
     return (
-        <Link to={`/blog/${slug}`} className="post-container">
+        <Link to={`/blogs/${slug}`} className="post-container">
             {/* POST IMAGE */}
             <div className="post-image">
                 {url && <img src={url} alt={alt !== null ? alt : title }/>}

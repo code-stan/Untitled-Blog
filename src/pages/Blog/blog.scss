@@ -1,6 +1,14 @@
 @use "../../scss/config/variable" as *;
 @use "../../scss/shared/mixins" as *;
 
+.blog{
+     margin-top: $hero-space-block;
+
+     h1{
+          font-size: clamp(2.4rem, 7vw, 4.8rem);
+
+     }
+}
 .posts{
      @extend %post-container-parent;
 }

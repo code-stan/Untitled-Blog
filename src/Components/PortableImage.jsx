@@ -15,7 +15,6 @@ const PortableTextImage = ({ value }) => {
       src={imageUrl}
       alt={value.alt || ' '}
       loading="lazy"
-      style={{ width: '200px' }}
     />
   );
 };

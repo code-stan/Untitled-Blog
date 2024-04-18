@@ -15,10 +15,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout/>}>
             <Route exact path='/' element={<Homepage/>}/>
-            <Route path='/blog' element={<Blog/>}/>
-            <Route path='/blog/:blogpost' element={<BlogPost/>}/>
+            <Route path='/blogs' element={<Blog/>}/>
+            <Route path='/blogs/:blogpost' element={<BlogPost/>}/>
             <Route path="*" element={<NotFound />} /> 
-
           </Route>
         </Routes>
       </BrowserRouter>

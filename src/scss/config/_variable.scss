@@ -5,6 +5,8 @@ $Desc-Color: rgb(107, 107, 107);
 $Dark-Desc-Color: rgb(96, 96, 96);
 $Ext-Color: #fefefe;
 
+$hero-space-block:  clamp(10rem, 8vw, 13rem);
+
 // FONTS
 @font-face{
     font-family: Instrument Sans;

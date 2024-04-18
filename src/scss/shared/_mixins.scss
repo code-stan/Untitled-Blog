@@ -1,5 +1,6 @@
 @use "../utils/breakpoint" as b;
 @use "../config/variable" as v;
+
 // SHARED PROPS
 %ff{
     font-family: "Sequel Sans Med";
@@ -34,5 +35,4 @@
                @content
           }
      }
-     
-};
+}
