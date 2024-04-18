@@ -1,0 +1,38 @@
+@use "../utils/breakpoint" as b;
+@use "../config/variable" as v;
+// SHARED PROPS
+%ff{
+    font-family: "Sequel Sans Med";
+    font-size: 2rem;
+    letter-spacing: .7px;
+}
+%post-container-parent{
+        margin-top: 3rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        align-items: stretch;
+        justify-content: center;
+        gap: 2rem;
+}
+//MIXINS
+@mixin bgImg {
+    background-image: v.$Linear-Gradient;
+}
+@mixin flex($align, $justify, $gap: 0){
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+}
+@mixin media($range: "min", $size){
+     @if $range == "min"{
+          @media screen and (min-width: b.breakpoint($size)) {
+               @content
+          }
+     } @else{
+          @media screen and (max-width: b.breakpoint($size)) {
+               @content
+          }
+     }
+     
+};

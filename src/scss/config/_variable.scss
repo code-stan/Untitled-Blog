@@ -19,25 +19,3 @@ $Ext-Color: #fefefe;
     src: url('../../assets/fonts/SequelSansBook.otf');
 }
 
-//MIXINS
-@mixin bgImg {
-    background-image: $Linear-Gradient;
-}
-%ff{
-    font-family: Sequel Sans Med;
-    font-size: 2rem;
-    letter-spacing: .7px;
-}
-%post-container-parent{
-        margin-top: 3rem;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-        align-items: stretch;
-        justify-content: center;
-        gap: 2rem;
-}
-@mixin flex($align, $justify){
-    display: flex;
-    align-items: $align;
-    justify-content: $justify;
-}

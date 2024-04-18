@@ -1,11 +1,11 @@
 import Footer from "./Footer/Footer";
-// import Header from "../../pages/Home/Header/Header";
 import { Outlet } from "react-router-dom";
+import Nav from "./Nav/Nav";
 
 const Layout = ()=>{
      return(
           <section className="layout">
-               {/* <Header/> */}
+               <Nav/>
                <Outlet/>
                <Footer/>
           </section>

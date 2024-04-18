@@ -1,4 +1,5 @@
 @use "../../scss/config/variable" as *;
+@use "../../scss/shared/mixins" as *;
 
 .posts{
      @extend %post-container-parent;

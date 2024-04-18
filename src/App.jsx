@@ -4,12 +4,14 @@ import Homepage from './pages/Home/Homepage';
 import Blog from './pages/Blog/Blog';
 import BlogPost from './pages/BlogPost/BlogPost';
 import NotFound from './pages/NotFound/NotFound';
+import ScrollToTop from './Components/ScrollToTop';
 
 function App() {
 
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop/>
         <Routes>
           <Route path="/" element={<Layout/>}>
             <Route exact path='/' element={<Homepage/>}/>

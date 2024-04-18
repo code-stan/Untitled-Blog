@@ -1,4 +1,5 @@
 @use "../../scss/config/variable" as *;
+@use "../../scss/shared/mixins" as *;
 
 .post-container{
     @include flex(stretch, start);

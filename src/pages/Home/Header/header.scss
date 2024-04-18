@@ -1,16 +1,7 @@
 @use "../../../scss/config/variable" as *;
+@use "../../../scss/shared/mixins" as *;
 
-.navbar{
-    padding-top: 2rem;
-    @include flex(center, space-between);
-    
-    .logo{
-        font-weight: 600;
-    }
-    .menu-container{
-        display: none;
-    }
-}
+
 .landing-page{
     padding-top: 7rem;
     margin-block: clamp(2rem, 8vw, 5rem);
@@ -24,12 +15,16 @@
         color: $Desc-Color;
     }
 }
-.e-field{
+.sub-form, .e-field{
     @include flex(center, center);
+
+}
+.e-field{
     flex-direction: column;
     gap: 1.5rem;
-
-    & > *{
+    max-width: 40rem;
+    
+    &, & > *{
         width: 100%;
     }
     .e-input{
@@ -44,8 +39,12 @@
             font-weight: 600;
             color: $Desc-Color;
         }
+        &:focus{
+            outline: none;
+            border: none;
+        }
     }
-    & button{
+    button{
         background-color: $Dark-Accent;
         color: $Ext-Color;
         padding-block: 1.5rem;
@@ -56,4 +55,27 @@
 }
 .success-modal{
     display: none;
+}
+
+@include media($size: "tablet"){
+    .e-field{
+        align-items: stretch;
+        flex-direction: row;
+        border: 2px solid $Desc-Color;
+        border-radius: 1.5rem;
+        padding: .5rem;
+        max-width: 50rem;
+        
+        & > *{
+        }
+        .e-input{
+            padding-block: 0;
+            padding-right: 0;
+            border: none;
+        }
+
+        button{
+            flex-basis: 35%;
+        }
+    }
 }

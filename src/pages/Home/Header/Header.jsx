@@ -1,6 +1,6 @@
 import { useState } from "react";
-
 import './header.scss';
+
 const Header = ()=> {
   const [emailInput, setEmailInput] = useState("")
   const handleEmailInput = (e)=>{
@@ -12,29 +12,6 @@ const Header = ()=> {
   }
   return (
     <header className="header">
-      <nav className="navbar">
-        <div className="logo">Untitled BLOG</div>
-        <button className="ham-menu" type="button" role="menu" aria-label="Menu button">
-          menu
-        </button>
-        <div className="menu-container">
-          <ul className="nav-list">
-            <li className="nav-item">
-              <a href="#" className="nav-link">Home</a></li>
-            <li className="nav-item">
-              <a href="#" className="nav-link">Products</a></li>
-            <li className="nav-item">
-              <a href="#" className="nav-link">Solutions</a></li>
-            <li className="nav-item">
-              <a href="#" className="nav-link">Pricing</a></li>
-            <li className="nav-item">
-              <a href="#" className="nav-link">Resources</a></li>
-            <li className="nav-item">
-              <button className="get-started">Get started</button>
-              </li>
-          </ul>
-        </div>
-      </nav>
       <section className="landing-page">
         <h1 className="landing-page__header">Inside Design: Stories and interviews</h1>
         <div className="landing-page__content">
@@ -43,7 +20,7 @@ const Header = ()=> {
         <div className="landing-page__subscribe-field">
 
           {/* EMAIL FORM */}
-          <form onSubmit={afterClick}>
+          <form onSubmit={afterClick} className="sub-form">
             <section className="emailInput e-field">
             <input type="email" name="email" className="subscriberEmail e-input" onChange={handleEmailInput}  placeholder="Enter your email" required />
             <button type="submit">Subscribe</button>

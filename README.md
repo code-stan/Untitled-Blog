@@ -1,3 +1,6 @@
+>**Note**
+>Site currently undergoing construction :sparkles:
+
 # Blog Application
 
 Resuming this blog application from the archives.
