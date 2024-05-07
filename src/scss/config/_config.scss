@@ -19,8 +19,13 @@ body {
     color: $Dark-Accent;
     background-color: $Body-Bg;
     padding-inline: 7.5%;
+    
 }
-
+.layout{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
 /* =========================
       |GENERAL STYLINGS|

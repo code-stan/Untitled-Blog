@@ -8,21 +8,18 @@ import { format } from "date-fns"
 
 import "./blogpost.scss";
 const BlogPost = () => {
-
   const [ blogPost, setBlogPost ] = useState([])
-
-  const slug = useParams();
-  console.log(slug.blogpost)
+  const {blogpost} = useParams();
 
   const imgComp = {
     types: {
-      image: PortableTextImage, // Use your custom image component (if created)
+      image: PortableTextImage,
     },
   };
 
   useEffect(()=>{
     client.fetch(
-      `*[slug.current == "${slug.blogpost}"] {
+      `*[slug.current == "${blogpost}"] {
         title,
         slug,
         body,
@@ -44,13 +41,18 @@ const BlogPost = () => {
   return (
     <div className="post-page">
       <div className="heading-container">
-            <div className="text-container">
-              <p>{blogPost.publishedAt && format(new Date(blogPost.publishedAt), "dd MMMM yyyy")}</p> • by <p>{blogPost.name}</p>
-              <h1 className="post-title">{blogPost.title}</h1>
-            </div>
-        {blogPost.mainImage && (<figure>
-            <img src={blogPost.mainImage.asset.url} alt={blogPost.mainImage.alt} />
-          </figure>)
+        {
+          blogPost.length !== 0 &&
+          (<div className="text-container">
+            <p>{blogPost.publishedAt && format(new Date(blogPost.publishedAt), "dd MMMM yyyy")}</p> • by <p>{blogPost.name}</p>
+            <h1 className="post-title">{blogPost.title}</h1>
+          </div>)
+        }
+        {
+          blogPost.mainImage && 
+          (<figure>
+              <img src={blogPost.mainImage.asset.url} alt={blogPost.mainImage.alt} />
+            </figure>)
         }
       </div>
       <div className="body-wrapper">
