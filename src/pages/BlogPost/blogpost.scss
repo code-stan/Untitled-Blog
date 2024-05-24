@@ -1,41 +1,93 @@
 @use "../../scss/shared/mixins" as *;
 @use "../../scss/config/variable" as *;
 
-.post-page{
-     margin-top: $hero-space-block;
-     padding-inline: 4%;
-     .heading-container{
-          img{
-               width: 100%;
-               height: 50rem;
-               border-radius: 3rem;
-               object-fit: cover;
+.post-page {
+	margin-top: $hero-space-block;
+	padding-inline: 4%;
 
-          }
-     }
-     .text-container > *{
-          display: inline-block;
-     }
-     .text-container h1{
-          display: block;
-          font-size: clamp(2.4rem, 7vw, 4.8rem);
-          max-width: 50rem;
-     }
+	.heading-container {
+          figure {
+               margin-block: 5rem;
 
-     .body-wrapper{
-          @include flex(center, start);
-          flex-direction: column; 
-     }
-     figure{
-          margin-block: 5rem;
-     }
-     .children-container{
-          width: 70%;
-          img{
-               width: 100%;
-               height: 40rem;
+               @include media("max", "tablet"){
+                    margin-block: 2rem;    
+               }
           }
-          h1{
-          }
+		img {
+			width: 100%;
+			aspect-ratio: 16/9;
+			border-radius: 3rem;
+			object-fit: cover;
+               
+               @include media("max", "tablet"){
+                    border-radius: 1rem;
+                    min-height: 20rem;
+               }
+		}
+          
+	}
+	.text-container > * {
+		display: inline-block;
+	}
+	.text-container h1 {
+		display: block;
+		font-size: clamp(2.4rem, 7vw, 4.8rem);
+		max-width: 50rem;
+	}
+	.body-wrapper {
+		@include flex(center, start);
+		flex-direction: column;
+	}
+	
+	.children-container {
+		max-width: 70rem;
+          margin-top: 3rem;
+          padding-inline: 3%;
+
+		img{
+			width: 100%;
+			aspect-ratio: 16/9;
+			object-fit: cover;
+			margin-bottom: 2rem;
+		}
+		h1 {
+			font-size: 4.0rem;
+		}
+
+		h2 {
+			font-size: 3.2rem;
+		}
+
+		h3 {
+			font-size: 2.4rem;
+		}
+
+		h4 {
+			font-size: 2.0rem;
+		}
+
+		@include media("max", "tablet") {
+               padding-inline: 7%;
+
+			h1 {
+				font-size: 3.2rem;
+			}
+
+			h2 {
+				font-size: 2.8rem;
+			}
+
+			h3 {
+				font-size: 2.0rem;
+			}
+
+			h4 {
+				font-size: 1.6rem;
+			}
+		}
+	}
+
+     @include media("max", "tablet"){
+	     padding-inline: 0%;
      }
 }

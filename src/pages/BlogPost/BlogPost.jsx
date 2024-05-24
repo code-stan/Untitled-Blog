@@ -45,7 +45,7 @@ const BlogPost = () => {
           blogPost.length !== 0 &&
           (<div className="text-container">
             <p>{blogPost.publishedAt && format(new Date(blogPost.publishedAt), "dd MMMM yyyy")}</p> • by <p>{blogPost.name}</p>
-            <h1 className="post-title">{blogPost.title}</h1>
+            <h1>{blogPost.title}</h1>
           </div>)
         }
         {
